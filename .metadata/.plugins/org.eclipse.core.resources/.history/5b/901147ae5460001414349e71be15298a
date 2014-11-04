@@ -1,0 +1,5 @@
+package SmartFractyl.reversi.main;
+
+public class ActionListenerMain {
+
+}

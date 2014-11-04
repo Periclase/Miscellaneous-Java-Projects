@@ -22,13 +22,18 @@ public class ReversiMain extends JFrame{
 		initFrame();
 		initBoard();
 	}
-	
-	public static ActionListener actionListener = new ActionListener(){
-		public void actionPerformed(ActionEvent e) {
-			Buttons[]
-		};
-	};
 
+	/*
+	public static ActionListener actionListener = new ActionListener(){
+		
+		public void actionPerformed(ActionEvent e) {
+			;
+		};
+		
+		
+	};
+	*/
+	
 	
 	public static void initFrame(){
 		JFrame frame = new JFrame ("Reversi");
@@ -42,14 +47,25 @@ public class ReversiMain extends JFrame{
 		
 		initButton(playArea);
 		frame.setVisible(true);
+		
 	}
 	
 	public static void initBoard(){
 		
 		for (int i = 0; i<=Board.length-1; i++){
 			for (int k = 0; k<=Board[i].length-1; k++){
+				if((i==3 && k==3) || (i==4 && k==4)){
+					
+					Board[i][k]=0;
+				}
+				else if((i==4 && k==3) || (i==3 && k==4)){
+					
+					Board[i][k]=1;
+				}
+				else{
+					Board[i][k]=-1;
+				}
 				
-				Board[i][k]=-1;
 			}
 		}
 		
@@ -59,16 +75,18 @@ public class ReversiMain extends JFrame{
 		for (int i = 0; i<=Board.length-1; i++){
 			for (int k = 0; k<=Board[i].length-1; k++){
 				if((i==3 && k==3) || (i==4 && k==4)){
-					Buttons[i][k]= new JButton("●");
+					Buttons[i][k]= new JButton("o");
+					Board[i][k]=0;
 				}
 				else if((i==4 && k==3) || (i==3 && k==4)){
-					Buttons[i][k]= new JButton("○");
+					Buttons[i][k]= new JButton("+");
+					Board[i][k]=1;
 				}
 				else{
 					Buttons[i][k]= new JButton("");
 				}
 				
-				Buttons[i][k].addActionListener(actionListener);
+				Buttons[i][k].addActionListener(new ActionListenerTile(i, k));
 				panel.add(Buttons[i][k]);
 			}
 		}
