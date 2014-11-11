@@ -17,16 +17,17 @@ public class ActionListenerTile implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		
 		if(ReversiMain.Board[i][k]==-1){
-			ReversiMain.Board[i][k]=0;
-			ReversiMain.Buttons[i][k].setText("o");
-		}
-		else if(ReversiMain.Board[i][k]==0){
-			ReversiMain.Board[i][k]=1;
-			ReversiMain.Buttons[i][k].setText("+");
-		}
-		else if(ReversiMain.Board[i][k]==1){
-			ReversiMain.Board[i][k]=-1;
-			ReversiMain.Buttons[i][k].setText("");
+			if(ReversiMain.isPlayer1Turn==true){
+				ReversiMain.Board[i][k]=0;
+				ReversiMain.Buttons[i][k].setText("o");
+				ReversiMain.onPlay();
+			}
+			else if(ReversiMain.isPlayer1Turn==false){
+				ReversiMain.Board[i][k]=1;
+				ReversiMain.Buttons[i][k].setText("+");
+				ReversiMain.onPlay();
+			}
+			
 		}
 		
 	}

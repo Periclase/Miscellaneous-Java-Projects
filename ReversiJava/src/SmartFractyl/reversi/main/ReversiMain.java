@@ -14,26 +14,24 @@ public class ReversiMain extends JFrame{
 	
 	public JFrame
 	frame;
-	
+	public static boolean isPlayer1Turn = true;
 	public static int [][] Board = new int [8][8];
 	public static JButton [][] Buttons = new JButton [8][8];
+	
+	public static void onPlay(){
+		
+		if(isPlayer1Turn = false){
+			isPlayer1Turn = true;
+		}
+		else if(isPlayer1Turn = true){
+			isPlayer1Turn = false;
+		}
+	}
 	
 	public static void main(String[] args) {
 		initFrame();
 		initBoard();
 	}
-
-	/*
-	public static ActionListener actionListener = new ActionListener(){
-		
-		public void actionPerformed(ActionEvent e) {
-			;
-		};
-		
-		
-	};
-	*/
-	
 	
 	public static void initFrame(){
 		JFrame frame = new JFrame ("Reversi");
