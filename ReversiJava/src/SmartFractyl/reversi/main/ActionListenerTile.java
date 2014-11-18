@@ -16,20 +16,22 @@ public class ActionListenerTile implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
-		if(ReversiMain.Board[i][k]==-1){
-			if(ReversiMain.isPlayer1Turn==true){
+		if(GameLogic.canMakeLegalMove(i, k)){
+			if(GameLogic.isPlayer1Turn){
 				ReversiMain.Board[i][k]=0;
 				ReversiMain.Buttons[i][k].setText("o");
-				ReversiMain.onPlay();
+				GameLogic.onPlay();
 			}
-			else if(ReversiMain.isPlayer1Turn==false){
+			else if(!GameLogic.isPlayer1Turn){
 				ReversiMain.Board[i][k]=1;
 				ReversiMain.Buttons[i][k].setText("+");
-				ReversiMain.onPlay();
+				GameLogic.onPlay();
 			}
 			
 		}
 		
 	}
+	
+	
 
 }
