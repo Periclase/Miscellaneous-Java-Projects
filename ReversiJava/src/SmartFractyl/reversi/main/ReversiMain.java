@@ -8,11 +8,13 @@ import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class ReversiMain extends JFrame{
 	
-	public JFrame
+	public static JFrame
 	frame;
 	
 	public static int [][] Board = new int [8][8];
@@ -28,16 +30,24 @@ public class ReversiMain extends JFrame{
 		JFrame frame = new JFrame ("Reversi");
 		GridLayout grid = new GridLayout (8,8);
 		JPanel playArea = new JPanel();
+		JPanel infoArea = new JPanel();
+		JLabel player1Status = new JLabel("P1's Pieces: ");
+		JLabel player2Status = new JLabel("P2's Pieces: ");
 		playArea.setLayout(grid);
+		infoArea.add(player1Status);
+		infoArea.add(player2Status);
+		
 		frame.add(playArea, BorderLayout.CENTER);
+		frame.add(infoArea, BorderLayout.NORTH);
 		frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		frame.setTitle("Reversi: Java Edition");
 		frame.setSize(300,300);
-		
 		initButton(playArea);
 		frame.setVisible(true);
 		
 	}
+	
+	
 	
 	public static void initBoard(){
 		
