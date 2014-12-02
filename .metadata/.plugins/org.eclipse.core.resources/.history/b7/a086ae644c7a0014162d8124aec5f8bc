@@ -16,15 +16,10 @@ public class GameLogic {
 	
 	public static boolean canMakeLegalMove(int i, int k){
 		if(ReversiMain.Board[i][k]==-1){
-			return true;
+			return true; 
 		}
-		
 		return false;
 		
-	}
-	
-	public static boolean checkAdjacent(int i, int k){
-		return true;
 	}
 	
 	public static boolean isGameOver(){
@@ -33,13 +28,13 @@ public class GameLogic {
 			for (int k = 0; k<=ReversiMain.Board[i].length-1; k++){
 				if(!(ReversiMain.Board[i][k]==-1)){
 					counter ++;
-					System.out.println(counter);
+					System.out.println("");
 				}
 				
 				
 			}
 		}
-		if(counter==63){
+		if(counter==64){
 			return true;
 		}
 		return false;

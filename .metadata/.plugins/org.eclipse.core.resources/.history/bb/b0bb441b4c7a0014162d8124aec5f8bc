@@ -11,6 +11,7 @@ public class GameLogic {
 		else if(isPlayer1Turn == true){
 			isPlayer1Turn = false;
 		}
+		
 	}
 	
 	public static boolean canMakeLegalMove(int i, int k){
@@ -18,6 +19,25 @@ public class GameLogic {
 			return true; 
 		}
 		return false;
+		
+	}
+	
+	public static boolean isGameOver(){
+		int counter = 0;
+		for (int i = 0; i<=ReversiMain.Board.length-1; i++){
+			for (int k = 0; k<=ReversiMain.Board[i].length-1; k++){
+				if(!ReversiMain.Board[i][k]==-1){
+					counter ++;
+					System.out.println("");
+				}
+				
+				
+			}
+		}
+		if(counter==64){
+			return false;
+		}
+		return true;
 		
 	}
 	

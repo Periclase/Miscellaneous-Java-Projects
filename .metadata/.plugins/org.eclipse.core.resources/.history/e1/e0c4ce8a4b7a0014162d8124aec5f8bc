@@ -11,7 +11,7 @@ public class GameLogic {
 		else if(isPlayer1Turn == true){
 			isPlayer1Turn = false;
 		}
-		isGameOver();
+		
 	}
 	
 	public static boolean canMakeLegalMove(int i, int k){
@@ -34,8 +34,10 @@ public class GameLogic {
 				
 			}
 		}
-		System.out.println(counter);
-		return false;
+		if(counter==64){
+			return false;
+		}
+		return true;
 		
 	}
 	

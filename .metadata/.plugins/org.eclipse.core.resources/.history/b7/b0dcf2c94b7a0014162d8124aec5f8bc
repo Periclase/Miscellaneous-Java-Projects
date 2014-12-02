@@ -11,7 +11,7 @@ public class GameLogic {
 		else if(isPlayer1Turn == true){
 			isPlayer1Turn = false;
 		}
-		isGameOver();
+		
 	}
 	
 	public static boolean canMakeLegalMove(int i, int k){
@@ -28,7 +28,7 @@ public class GameLogic {
 			for (int k = 0; k<=ReversiMain.Board[i].length-1; k++){
 				if(ReversiMain.Board[i][k]==-1){
 					counter ++;
-					
+					Systen.out.println("");
 				}
 				
 				
