@@ -10,11 +10,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class InfoArea {
-	static double startTime = (int) System.nanoTime()/Math.pow(10, 9); 
-	static JLabel timeElapsed = new JLabel("");
-	static double timePassed = 0;
-	static double nowTime = 0;
-	
+	static Date start = new Date();
+	JLabel timeElapsed;
 	
 	public static void initInfoArea(JFrame frame){
 		JPanel infoArea = new JPanel();
@@ -27,16 +24,13 @@ public class InfoArea {
 		infoArea.add(player2Status);
 		infoArea.add(timeElapsed, BorderLayout.EAST);
 		frame.add(infoArea, BorderLayout.NORTH);
-		displayCurrentTime();
 
 	}
 	
-	public static void displayCurrentTime(){
+	public static String displayCurrentTime(){
 		
-		nowTime = (int) System.nanoTime()/Math.pow(10, 9);
-		timePassed = (int) startTime-nowTime;
-		
-		timeElapsed.setText("Time Elapsed: "+ timePassed); 
+		return String.valueOf((int)start.getTime()-(int) new Date().getTime());
+		timeElapsed 
 		displayCurrentTime();
 	}
 }

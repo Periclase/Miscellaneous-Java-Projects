@@ -34,8 +34,7 @@ public class InfoArea {
 	public static void displayCurrentTime(){
 		
 		nowTime = (int) System.nanoTime()/Math.pow(10, 9);
-		timePassed = (int) startTime-nowTime;
-		
+		timePassed = startTime-nowTime;
 		timeElapsed.setText("Time Elapsed: "+ timePassed); 
 		displayCurrentTime();
 	}
