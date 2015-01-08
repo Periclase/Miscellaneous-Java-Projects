@@ -21,7 +21,7 @@ public class InfoArea {
 	  static ActionListener timeCycle = new ActionListener() {
 	      public void actionPerformed(ActionEvent evt) {
 	    	  secondsElapsed ++;
-	    	  updateTime();
+	    	  
 	    	  timeElapsed.setText("Time: " + hoursElapsed + ":" + minutesElapsed + ":" +secondsElapsed);
 	      }
 	  };

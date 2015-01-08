@@ -14,15 +14,13 @@ import javax.swing.Timer;
 public class InfoArea {
 	static JLabel timeElapsed = new JLabel("");
 	public static int secondsElapsed = 0;
-	public static int minutesElapsed = 0;
-	public static int hoursElapsed = 0;
 	static String elapsed ="";
 	static int interval = 1000; //milliseconds
 	  static ActionListener timeCycle = new ActionListener() {
 	      public void actionPerformed(ActionEvent evt) {
 	    	  secondsElapsed ++;
-	    	  updateTime();
-	    	  timeElapsed.setText("Time: " + hoursElapsed + ":" + minutesElapsed + ":" +secondsElapsed);
+	    	  elapsed=getTime(seconds);
+	    	  timeElapsed.setText("Time: " + elapsed);
 	      }
 	  };
 
@@ -45,17 +43,12 @@ public class InfoArea {
 
 	}
 	
-	public static void updateTime(){
-		
-		if(secondsElapsed==60){
-			minutesElapsed++;
-			secondsElapsed=0;
+	public static String getTime(int i){
+		String str = "";
+		if(i==60){
 			
 		}
-		if(minutesElapsed==60){
-			hoursElapsed++;
-		}
-		
+		return str;
 	}
 	
 	

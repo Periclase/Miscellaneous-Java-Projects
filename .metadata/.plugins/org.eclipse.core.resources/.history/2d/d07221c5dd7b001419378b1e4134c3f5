@@ -1,7 +1,0 @@
-package SmartFractyl.reversi.main;
-
-public class InfoArea {
-	public static void initInfoArea(JFrame frame){
-		
-	}
-}
